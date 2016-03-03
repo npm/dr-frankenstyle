@@ -1,5 +1,5 @@
 {
-  "name": "dr-frankenstyle",
+  "name": "@npmcorp/dr-frankenstyle",
   "version": "0.2.7",
   "description": "Resolves CSS dependencies between node packages",
   "main": "dr-frankenstyle.js",
