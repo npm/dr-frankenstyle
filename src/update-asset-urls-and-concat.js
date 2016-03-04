@@ -14,7 +14,7 @@ export default function updateAssetUrlsAndConcat() {
 
   const resultCssFileStream = map(function({renameTable, files}, callback) {
     const concatenatedCss = files.reduce((cssContents, file) => {
-      const {assetLocationTranslation} = renameTable[file.packageName];
+      const {assetLocationTranslation} = renameTable[file.packageName] || renameTable['@npmcorp/' + file.packageName];
       let cssWithUpdatedPaths = file.contents.toString();
       for (let originalUrl of Object.keys(assetLocationTranslation)) {
         const newUrl = assetLocationTranslation[originalUrl];
