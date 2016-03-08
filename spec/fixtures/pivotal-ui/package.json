@@ -1,6 +1,7 @@
 {
   "name": "pivotal-ui",
   "dependencies": {
+    "@npmcorp/typography": "^2.0.0",
     "no-style-dependency": "^0",
     "pui-css-alerts": "^0",
     "pui-css-alignment": "^0",
@@ -18,6 +19,7 @@
     "pui-css-ellipsis": "^0",
     "pui-css-embeds": "^0",
     "pui-css-forms": "^0",
+    "pui-css-google-maps": "^0",
     "pui-css-grids": "^0",
     "pui-css-hoverable": "^0",
     "pui-css-iconography": "^0",
@@ -25,7 +27,6 @@
     "pui-css-labels": "^0",
     "pui-css-links": "^0",
     "pui-css-lists": "^0",
-    "pui-css-google-maps": "^0",
     "pui-css-media": "^0",
     "pui-css-modals": "^0",
     "pui-css-panels": "^0",

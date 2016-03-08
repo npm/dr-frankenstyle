@@ -29,7 +29,7 @@ export default class DependencyGraph {
   installedPackagesLookup() {
     return new Promise(async (resolve, reject) => {
       const packageJsonPaths = await glob(
-        '**/node_modules/*/package.json',
+        '**/node_modules/{,*/}*/package.json',
         {
           cwd: this.rootPackageDir,
 
