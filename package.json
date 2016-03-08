@@ -52,6 +52,7 @@
     "glob": "^5.0.9",
     "lodash.uniq": "^3.1.0",
     "mkdirp": "^0.5.0",
+    "read-package-tree": "^5.1.2",
     "stream-reduce": "^1.0.3",
     "through2": "^0.6.5",
     "vinyl": "^0.4.6",
