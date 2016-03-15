@@ -5,12 +5,13 @@ import cssFilesFromDependencies from './css-files-from-dependencies';
 
 import {setup, copyAssets, generateCss} from './dev';
 
-export default function drFrankenstyle() {
+export default function drFrankenstyle(opts = {}) {
   const setupStream = setup({cached: false});
+  const { verbose } = opts;
 
   return merge(
-    setupStream.pipe(copyAssets()),
-    setupStream.pipe(generateCss(cssFilesFromDependencies()))
+    setupStream.pipe(copyAssets({ verbose })),
+    setupStream.pipe(generateCss(cssFilesFromDependencies(), { verbose }))
   );
 }
 

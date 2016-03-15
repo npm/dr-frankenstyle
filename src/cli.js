@@ -7,11 +7,14 @@ const argv = require('yargs')
   .demand(1, 'Please provide an output directory')
   .boolean('rails')
   .describe('rails', "Use Rails' asset-url helper instead of url in CSS")
+  .boolean('verbose')
+  .alias('verbose', 'v')
+  .describe('verbose', 'verbose output')
   .argv;
 
 const output = argv._[0];
 
-let stream = drFrankenstyle();
+let stream = drFrankenstyle({ verbose: argv.verbose });
 
 if (argv.rails) {
   stream = stream.pipe(drFrankenstyle.railsUrls());
