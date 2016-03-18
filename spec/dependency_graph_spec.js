@@ -3,7 +3,8 @@ import {toHavePackages, toHaveOrder} from './helpers/jasmine_matchers';
 import DependencyGraph from '../src/dependency_graph';
 
 const puiCssDependencies = {
-  '@npmcorp/typography': ['pui-css-bootstrap'],
+  '@npmcorp/pui-css-typography': ['font-awesome', 'pui-css-bootstrap'],
+  'font-awesome': [],
   'pui-css-alerts': ['pui-css-bootstrap', 'pui-css-typography'],
   'pui-css-alignment': [],
   'pui-css-avatars': ['pui-css-bootstrap'],
@@ -87,7 +88,7 @@ describe('DependencyGraph', function() {
 
     expect(orderedStyleDependencyNames.length).toEqual(puiCssPackages.length);
 
-    expect(orderedStyleDependencyNames).toHaveOrder('pui-css-bootstrap', '@npmcorp/typography');
+    expect(orderedStyleDependencyNames).toHaveOrder('pui-css-bootstrap', '@npmcorp/pui-css-typography');
     expect(orderedStyleDependencyNames).toHaveOrder('pui-css-bootstrap', 'pui-css-alerts');
     expect(orderedStyleDependencyNames).toHaveOrder('pui-css-bootstrap', 'pui-css-avatars');
     expect(orderedStyleDependencyNames).toHaveOrder('pui-css-bootstrap', 'pui-css-back-to-top');

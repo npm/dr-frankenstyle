@@ -1,7 +1,7 @@
 {
   "name": "pivotal-ui",
   "dependencies": {
-    "@npmcorp/typography": "^2.0.0",
+    "@npmcorp/pui-css-typography": "^2.2.0",
     "no-style-dependency": "^0",
     "pui-css-alerts": "^0",
     "pui-css-alignment": "^0",
