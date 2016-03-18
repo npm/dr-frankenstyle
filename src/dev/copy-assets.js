@@ -6,7 +6,8 @@ import through from 'through2';
 import {pipeline} from 'event-stream';
 import reduce from 'stream-reduce';
 
-export default function copyAssets() {
+export default function copyAssets(opts = {}) {
+  const { verbose } = opts;
   const assetRenameTableStream = reduce(function (memo, file) {
     if (path.basename(file.path) === 'asset-rename-table.json') {
       return JSON.parse(file.contents.toString());
@@ -25,6 +26,9 @@ export default function copyAssets() {
           const newUrl = assetLocationTranslation[originalUrl];
           const existingAssetFileName = path.join(baseAssetDir, originalUrl);
           const contents = await logError(fs.readFile(existingAssetFileName), `Could not read asset file ${existingAssetFileName}`);
+          if (verbose) {
+            console.warn(`Copying "${originalUrl}" to "${newUrl}"`);
+          }
           this.push(new File({path: newUrl, contents}));
         }
       }

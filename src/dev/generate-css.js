@@ -4,8 +4,9 @@ import reduce from 'stream-reduce';
 import updateAssetUrlsAndConcat from '../update-asset-urls-and-concat';
 import path from 'path';
 
-export default function generateCss(cssFileStream) {
+export default function generateCss(cssFileStream, opts = {}) {
   const input = map((data, callback) => callback(null, data));
+  const { verbose } = opts;
 
   const renameTableStream = reduce(function (memo, file) {
     if (path.basename(file.path) === 'asset-rename-table.json') {
@@ -19,6 +20,9 @@ export default function generateCss(cssFileStream) {
   const cssDependenciesStream = through.obj(function(file, encoding, callback) {
     if (path.basename(file.path) === 'dependencies-list.json') {
       for (let dependency of JSON.parse(file.contents.toString())) {
+        if (verbose) {
+          console.warn(`Adding "${dependency.packageName}" as a dependency`);
+        }
         this.push(dependency);
       }
     }

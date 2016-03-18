@@ -1,6 +1,6 @@
 {
   "name": "@npmcorp/dr-frankenstyle",
-  "version": "0.4.1",
+  "version": "1.0.0",
   "description": "Resolves CSS dependencies between node packages",
   "main": "dr-frankenstyle.js",
   "preferGlobal": "true",
