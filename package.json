@@ -54,8 +54,8 @@
     "mkdirp": "^0.5.0",
     "stream-reduce": "^1.0.3",
     "through2": "^0.6.5",
-    "vinyl": "^0.4.6",
-    "vinyl-fs": "^1.0.0",
+    "vinyl": "^1.1.1",
+    "vinyl-fs": "^2.4.3",
     "yargs": "^3.9.0"
   },
   "scripts": {
